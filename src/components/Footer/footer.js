@@ -11,7 +11,7 @@ export default function FooterApp(){
                         <li><a>Investor Relations</a></li>
                         <li><a>Ways to Watch</a></li>
                         <li><a>Corporate Information</a></li>
-                        <li><a>Only on Netflix</a></li>
+                        <li><a>Only on NetPlix</a></li>
                     </ul>
 
                     <ul className='footer-items'>
