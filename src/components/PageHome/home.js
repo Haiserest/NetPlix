@@ -62,7 +62,7 @@ export default function PageHome(){
 
                     <div className='dropdown'>
                         <button className='btn'>What is NetPlix?
-                            <h4 className='btnarrow'>+</h4>
+                            <h4 className='btnarrow'>&#9587;</h4>
                         </button>
                         
                         <div className='Q'>Hello1</div>
@@ -70,35 +70,35 @@ export default function PageHome(){
                     
                     <div className='dropdown'>
                         <button className='btn'>How much does NetPlix cost?
-                        <h4 className='btnarrow'>+</h4>
+                            <h4 className='btnarrow'>&#9587;</h4>
                         </button>
                         <div className='Q'>Hello2</div>
                     </div>
 
                     <div className='dropdown'>
                         <button className='btn'>Where can I watch?
-                        <h4 className='btnarrow'>+</h4>
+                            <h4 className='btnarrow'>&#9587;</h4>
                         </button>
                         <div className='Q'>Hello3</div>
                     </div>
 
                     <div className='dropdown'>
                         <button className='btn'>How do I cancel?
-                        <h4 className='btnarrow'>+</h4>
+                            <h4 className='btnarrow'>&#9587;</h4>
                         </button>
                         <div className='Q'>Hello4</div>
                     </div>
 
                     <div className='dropdown'>
                         <button className='btn'>What can I watch on NetPlix?
-                        <h4 className='btnarrow'>+</h4>
+                            <h4 className='btnarrow'>&#9587;</h4>
                         </button>
                         <div className='Q'>Hello5</div>
                     </div>
 
                     <div className='dropdown'>
                         <button className='btn'>Is NetPlix good for kids?
-                        <h4 className='btnarrow'>+</h4>
+                            <h4 className='btnarrow'>&#9587;</h4>
                         </button>
                         <div className='Q'>Hello6</div>
                     </div>
