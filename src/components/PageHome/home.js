@@ -9,7 +9,7 @@ export default function PageHome() {
     q4: false,
     q5: false,
     q6: false,
-  })
+  });
 
   function questionClick(q) {
     setShowAns({ [q]: !showAns[q] })
@@ -107,7 +107,7 @@ export default function PageHome() {
 
           <div className="dropdown">
             <button
-              className="btn"
+              className={showAns.q1 ? "btn active" : "btn"}
               value={'q1'}
               onClick={(e) => {
                 questionClick(e.target.value)
@@ -136,7 +136,7 @@ export default function PageHome() {
 
           <div className="dropdown">
             <button
-              className="btn"
+              className={showAns.q2 ? "btn active" : "btn"}
               value={'q2'}
               onClick={(e) => {
                 questionClick(e.target.value)
@@ -159,7 +159,7 @@ export default function PageHome() {
 
           <div className="dropdown">
             <button
-              className="btn"
+              className={showAns.q3 ? "btn active" : "btn"}
               value={'q3'}
               onClick={(e) => {
                 questionClick(e.target.value)
@@ -190,7 +190,7 @@ export default function PageHome() {
 
           <div className="dropdown">
             <button
-              className="btn"
+              className={showAns.q4 ? "btn active" : "btn"}
               value={'q4'}
               onClick={(e) => {
                 questionClick(e.target.value)
@@ -214,7 +214,7 @@ export default function PageHome() {
 
           <div className="dropdown">
             <button
-              className="btn"
+              className={showAns.q5 ? "btn active" : "btn"}
               value={'q5'}
               onClick={(e) => {
                 questionClick(e.target.value)
@@ -238,7 +238,7 @@ export default function PageHome() {
 
           <div className="dropdown">
             <button
-              className="btn"
+              className={showAns.q6 ? "btn active" : "btn"}
               value={'q6'}
               onClick={(e) => {
                 questionClick(e.target.value)
