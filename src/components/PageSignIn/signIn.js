@@ -35,11 +35,11 @@ export default function PageSignIn(){
         if(status){
             localStorage.setItem("user", username);
             localStorage.setItem("password", password);
-            alert("sign in")
             setUsername("");
             setPassword("");
             setErrUser("");
             setErrPass("");
+            window.location.href = "/avatar"
         }
 
     }

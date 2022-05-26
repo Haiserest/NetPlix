@@ -1,0 +1,36 @@
+.pageAvatar-container{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg{
+    background: #000;
+    height: calc(500px + 6rem);
+}
+
+.watcher{
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.watcher-text, .name-watcher{
+    text-align: center;
+    color: #ffff;
+}
+
+.watcher-text{
+    font-size: 35px;
+}
+
+.avatar-watcher{
+    width: 150px;
+    margin: 0 auto;
+}
+
+.avatar-watcher:hover{
+    cursor: pointer;
+    box-shadow: 2px 1px 2px #ffff;
+}
