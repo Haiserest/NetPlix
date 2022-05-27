@@ -3,20 +3,20 @@
     padding: 0;
     box-sizing: border-box;
     background: #000;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .banner{
-    height: 500px;
-    background: url('/public/image/main/Movie/banner.jpg') no-repeat;
+    height: 650px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url('/public/image/main/banner.jpg') no-repeat;
     background-size: cover;
-    border-bottom: 8px solid #303030;
+    border-bottom: 4px solid #303030;
 }
 
 .bannerText{
     color: #fff;
-    padding-top: 150px;
-    padding-left: 30px;
+    padding-top: 200px;
+    padding-left: 50px;
 }
 
 .banner-btn{
@@ -43,93 +43,7 @@
 
 .desc{
     font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #000;
     width: 50%;
-}
-
-.list{
-    color: #fff;
-    padding-bottom: 20px;
-    border-bottom: 4px solid #303030;
-}
-
-.list h2{
-    margin-left: 20px;
-}
-
-.slidemovie{
-    position: relative;
-}
-
-.arr-l, .arr-r{
-    position: absolute;
-    font-size: 40px;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    background: #000;
-    height: 100%;
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
-
-.arr-r{
-    top: 0;
-    right: 0;
-}
-
-.shell{
-    display: flex;
-    flex-direction: row;
-    margin-left: 105px;
-    transition: all 0.5s ease;
-}
-
-.moviethum{
-    margin: 0 10px;
-    transition: all 0.2s ease;
-}
-
-.movie{
-    position: relative;
-    cursor: pointer;
-}
-
-.movie-overlay{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    transform: scale(1.1, 1.1);
-    background: #303030ce;
-    margin: 4px 10px;
-    margin-bottom: -10px;
-    width: 305px;
-    border: none;
-    outline: none;
-    transition: all 0.2s ease;
-}
-
-.movie-detail h2, .movie-detail p{
-    margin: 0;
-    padding: 5px 10px;
-}
-
-.movie-detail h2{
-    font-weight: 400;
-}
-
-.movie-detail p{
-    font-size: 14px;
-}
-
-.movie:hover .moviethum{
-    transform: scale(1.1, 1.1);
-}
-
-.movie:hover .movie-overlay{
-    margin-bottom: -1px;
-    opacity: 1;
 }

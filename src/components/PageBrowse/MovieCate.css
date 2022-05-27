@@ -1,0 +1,95 @@
+.moviecate-container{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #000;
+    border-bottom: 4px solid #303030;
+}
+
+.cate-con{
+    width: 100%;
+    height: 250px;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.cate-con h2{
+    padding: 5px 0px 0px 20px;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.movie-box{
+    position: relative;
+}
+
+.al, .ar{
+    position: absolute;
+    top: 0;
+    display: flex;
+    width: 80px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    z-index: 2;
+}
+
+.ar{
+    right: 0;
+}
+
+.cate{
+    margin-left: 70px;
+    display: flex;
+    transition: 0.2s ease;
+}
+
+.catemovie{
+    margin: 0 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.cate-overlay{
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.61);
+    opacity: 0;
+}
+
+.cate-detail{
+    position: absolute;
+    height: 100%;
+    bottom: 3px;
+    left: 0;
+}
+
+.cate-detail h2{
+    font-size: 14px;
+    margin: 0;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cate-detail p{
+    font-size: 10px;
+    padding-left: 15px;
+    padding-right: 10px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.catemovie:hover {
+    transition: 0.2s ease;
+    transform: scale(1.1, 1.1);
+}
+
+.catemovie:hover .cate-overlay{
+    opacity: 1;
+    bottom: 3px;
+    transition: 0.5s ease;
+}
