@@ -14,6 +14,10 @@ export default function HeaderApp(){
             setUsername(window.localStorage.getItem("user").split("@")[0]); 
             setStates(true)
         }
+
+        if (window.location.href.split("/")[3] === ""){
+            setStates(false)
+        }
     },[]);
 
     let menuRef = useRef();
