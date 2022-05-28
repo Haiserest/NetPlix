@@ -14,7 +14,7 @@
 
 .headermenu{
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     padding-right:50px;
     padding-left: 220px;
     margin-top: -65px;
@@ -89,4 +89,44 @@
 
 .useravatar:hover{
     box-shadow: 2px 1px 2px #ffff;
+}
+
+.box-ask{
+    position: absolute;
+    top: 75px;
+    right: -100px;
+    width: 150px;
+    transition: 0.2s ease;
+    opacity: 0;
+}
+
+.box-ask.active{
+    z-index: 1;
+    opacity: 1;
+    right: 5px;
+}
+
+.box-ask ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-ask li{
+    font-size: 15px;
+    padding: 10px 0px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.box-ask a{
+    font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(25, 136, 247, 0.8);
+}
+
+.box-ask li:hover{
+    transition: 0.2s ease;
+    padding-left: 30px;
 }

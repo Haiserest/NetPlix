@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import FooterApp from './components/Footer/footer';
@@ -9,6 +10,17 @@ import PageHome from './components/PageHome/home';
 import PageSignIn from './components/PageSignIn/signIn';
 
 function App() {
+
+  useEffect(()=>{
+
+    let url = window.location.href.split("/")[3];
+
+    if(url === "" || url === "signIn"){
+      localStorage.clear();
+    }
+  },[]);
+  
+
   return (
     <div className="App">
       <div className='Header-App'>
