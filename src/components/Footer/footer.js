@@ -1,8 +1,25 @@
 import './footer.css'
+import { useEffect, useState } from 'react';
+import ScrollUp from '../Scroll/ScrollUp';
 
 export default function FooterApp(){
+
+    const [scrollbtn, setScrollbtn] = useState(false);
+
+    useEffect(()=>{
+        window.addEventListener("scroll",()=>{
+            if(window.scrollY > 300){
+                setScrollbtn(true)
+            }
+            else{
+                setScrollbtn(false)
+            }
+        })
+    })
+
     return (
         <div className='footer-container'>
+            {scrollbtn? (<ScrollUp cc={"iconScrollUp active"}/>): (<ScrollUp cc={"iconScrollUp"}/>)}
             <div className='footer-area'>
                 <p className='footer-headmenu'>Question? </p>
                 <div className='footer-menu'>

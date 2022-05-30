@@ -2,10 +2,12 @@ import './PageBrowse.css'
 
 import MovieCate from './MovieCate';
 
-export default function PageBrowse() {
+export default function PageBrowse(props) {
+  let { listtype } = props;
 
   return (
     <div className="browse-container">
+      
       <div className="banner">
           <div className='bannerText'>
             <h1 className='titlemovie'>JOKER</h1>
@@ -15,15 +17,30 @@ export default function PageBrowse() {
             <button className='banner-btn'>PLAY</button>
           </div>
       </div>
-      
-      <MovieCate movieType={"Kid"} />
-      <MovieCate movieType={"Drama"} />
-      <MovieCate movieType={"Comedy"} />
-      <MovieCate movieType={"Adventure"} />
-      <MovieCate movieType={"Documentary"} />
-      <MovieCate movieType={"Thriller"} />
-      <MovieCate movieType={"Crime"} />
-      <MovieCate movieType={"Romance"} />
+      {listtype === "Series" ? 
+      (
+        <div className='listcontent'>
+        <MovieCate movieType={"Series"} />
+      </div>
+      ) : (listtype === "Film") ? (
+        <div className='listcontent'>
+        <MovieCate movieType={"Film"} />
+      </div>
+      ) : (listtype === "kids") ? (
+        <div className='listcontent'>
+        <MovieCate movieType={"Kid"} />
+      </div>
+      ) : (
+        <div className='listcontent'>
+        <MovieCate movieType={"Drama"} />
+        <MovieCate movieType={"Comedy"} />
+        <MovieCate movieType={"Adventure"} />
+        <MovieCate movieType={"Documentary"} />
+        <MovieCate movieType={"Thriller"} />
+        <MovieCate movieType={"Crime"} />
+        <MovieCate movieType={"Romance"} />
+      </div>
+      )}
 
     </div>
   )

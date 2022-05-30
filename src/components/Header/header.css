@@ -4,6 +4,7 @@
     box-sizing: border-box;
     position: relative;
     z-index: 2;
+    /* overflow: hidden; */
 }
 
 .logo-header{
@@ -18,7 +19,6 @@
     padding-right:50px;
     padding-left: 220px;
     margin-top: -65px;
-
 }
 
 .navmenu{
@@ -32,7 +32,13 @@
 .nav-item{
     margin: 0 20px;
     font-size: 18px;
+    transition: 0.3s ease;
     cursor: pointer;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: #fff;
 }
 
 .option{
@@ -47,6 +53,7 @@
 .searchicon{
     font-size: 20px;
     margin-right: 20px;
+    transition: 0.3s ease;
     cursor: pointer;
 }
 
@@ -77,6 +84,10 @@
     transition: 0.3s ease;
 }
 
+.searchicon:hover{
+    padding-bottom: 10px;
+}
+
 .searchbar:focus{
     opacity: 0.8;
 }
@@ -95,15 +106,15 @@
     position: absolute;
     top: 75px;
     right: -100px;
-    width: 150px;
+    width: 140px;
     transition: 0.2s ease;
-    opacity: 0;
+    opacity: 1;
 }
 
 .box-ask.active{
     z-index: 1;
+    right: 15px;
     opacity: 1;
-    right: 5px;
 }
 
 .box-ask ul{
@@ -116,7 +127,11 @@
 
 .box-ask li{
     font-size: 15px;
-    padding: 10px 0px;
+    width: 140px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    /* padding: 10px 0px; */
     padding-left: 10px;
     cursor: pointer;
 }

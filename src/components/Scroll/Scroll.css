@@ -1,0 +1,39 @@
+.scrollUp-container{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.iconScrollUp{
+    position: fixed;
+    right: 20px;
+    bottom: -40px;
+    width: 50px;
+    height: 50px;
+    background: #e50914;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 18px;
+    z-index: 9999;
+    opacity: 0;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.iconScrollUp.active{
+    opacity: 1;
+    bottom: 20px;
+}
+
+.iconScrollUp:hover{
+    background: #fff;
+    color: #e50914;
+}
+
+.upicon{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}

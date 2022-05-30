@@ -23,15 +23,13 @@ export default function HeaderApp(){
     let menuRef = useRef();
 
     useEffect(()=>{
-        document.addEventListener("mousedown", (event) =>{
+        document.addEventListener("mouseover", (event) =>{
             if(!menuRef.current.contains(event.target))
                 setMenubar(false);
 
-            else if(menubar){
-                setInterval(() =>{
-                    setMenubar(false)
-                },8000);
-        }
+            else{
+                setMenubar(true)
+            }
         })
    
     });
@@ -55,10 +53,6 @@ export default function HeaderApp(){
         window.location.href="/";
     }
 
-    const clickAvatar = () =>{
-        setMenubar(true)
-    }
-
     const clickSearch = () =>{
         setSearch(!search)
     }
@@ -71,29 +65,34 @@ export default function HeaderApp(){
             <div className='headermenu'>
                 <div className='nav'>
                     <ul className='navmenu'>
-                        <li className='nav-item'><a> Series</a></li>
-                        <li className='nav-item'><a> Films</a></li>
-                        <li className='nav-item'><a> Kids</a></li>
+                        <li className='nav-item'><a href="/browse/Series"> Series</a></li>
+                        <li className='nav-item'><a href="/browse/Films"> Films</a></li>
+                        <li className='nav-item'><a href="/browse/Kids"> Kids</a></li>
                     </ul>
                 </div>
 
                 <div className='option'>
                     <input className={search ? "searchbar" : "searchbarhide"}></input>
                     <SearchOutlined className='searchicon' onClick={clickSearch}/>
-                    <img className='useravatar' src='image/main/avatar.png' onClick={clickAvatar} ref={menuRef}/>
+                    <div className='menuavatar' ref={menuRef}>
+                        <img className='useravatar' src='image/main/avatar.png'/>
                     
                         <div className={menubar ? "box-ask active" : "box-ask"}>
-                            <ul>
-                                <li onClick={getOut}>
-                                    <a><UserOutlined /> BackToAvatar</a>
-                                </li>
-                                <li onClick={SignOut}>
-                                    <a><ExportOutlined /> SignOut</a>
-                                </li>
-                            </ul>
+                            {menubar ? (
+                                <ul>
+                                    <li onClick={getOut}>
+                                        <a><UserOutlined /> BackToAvatar</a>
+                                    </li>
+                                    <li onClick={SignOut}>
+                                        <a><ExportOutlined /> SignOut</a>
+                                    </li>
+                                </ul>
+                            ) : null}
+                            
                         </div>
-                        
+                    </div>
                     <h3>{username}</h3>
+                    
                 </div>
             </div>
         
