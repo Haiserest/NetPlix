@@ -8,6 +8,8 @@ export default function HeaderApp(){
     const [states, setStates] = useState(false);
     const [search, setSearch] = useState(false);
     const [menubar, setMenubar] = useState(false);
+    const [headerbg, setHeaderbg] = useState(false);
+    const [menubg, setMenubg] = useState(false);
 
     useEffect(()=>{
         if(window.localStorage.getItem("watcher") !== null){
@@ -24,15 +26,35 @@ export default function HeaderApp(){
 
     useEffect(()=>{
         document.addEventListener("mouseover", (event) =>{
-            if(!menuRef.current.contains(event.target))
+            if(!menuRef.current.contains(event.target)){
                 setMenubar(false);
+                setMenubg(false)
+            }
 
             else{
                 setMenubar(true)
+                if(window.scrollY > 50){
+                    setMenubg(true)
+                }
+                else{
+                    setMenubg(false)
+                }
             }
         })
    
     });
+
+    useEffect(()=>{
+        window.addEventListener("scroll",()=>{
+            console.log(window.scrollY)
+            if(window.scrollY > 50){
+                setHeaderbg(true)
+            }
+            else{
+                setHeaderbg(false)
+            }
+        })
+    })
 
     function returnHome(){
         if(window.localStorage.getItem("user") !== null){
@@ -58,7 +80,7 @@ export default function HeaderApp(){
     }
 
     return (
-        <div className='header-container'>
+        <div className={headerbg ? 'header-containerBG' : 'header-container'}>
             <img src='/image/header/netplix2.png' className='logo-header' onClick={returnHome}/>
         {states ? (
 
@@ -75,7 +97,8 @@ export default function HeaderApp(){
                     <input className={search ? "searchbar" : "searchbarhide"}></input>
                     <SearchOutlined className='searchicon' onClick={clickSearch}/>
                     <div className='menuavatar' ref={menuRef}>
-                        <img className='useravatar' src='image/main/avatar.png'/>
+                        <img className='useravatar' src='/image/main/avatar.png'/>
+                        <div className={menubg ? 'bg-boxask active' : 'bg-boxask'}></div>
                     
                         <div className={menubar ? "box-ask active" : "box-ask"}>
                             {menubar ? (
