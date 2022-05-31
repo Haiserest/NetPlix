@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: content-box;
     background-color: #000000;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     z-index: 2;

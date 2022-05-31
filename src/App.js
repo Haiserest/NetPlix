@@ -32,7 +32,12 @@ function App() {
           <Route path='/' element={<PageHome />} />
           <Route path='/signIn' element={<PageSignIn />} />
           <Route path='/avatar' element={<PageAvatar />} />
-          <Route path='/browse' element={<PageBrowse />}/>
+          <Route path='/browse' >
+            <Route path='' element={<PageBrowse listtype={"All"} />} />
+            <Route path='Series' element={<PageBrowse listtype={"Series"} />} />
+            <Route path='Films' element={<PageBrowse listtype={"Film"} />} />
+            <Route path='Kids' element={<PageBrowse listtype={"Kid"} />} />
+          </Route>
 
           <Route path='*' element={<PageNotFound />}/>
         </Routes>

@@ -8,6 +8,8 @@ export default function HeaderApp(){
     const [states, setStates] = useState(false);
     const [search, setSearch] = useState(false);
     const [menubar, setMenubar] = useState(false);
+    const [headerbg, setHeaderbg] = useState(false);
+    const [menubg, setMenubg] = useState(false);
 
     useEffect(()=>{
         if(window.localStorage.getItem("watcher") !== null){
@@ -23,18 +25,36 @@ export default function HeaderApp(){
     let menuRef = useRef();
 
     useEffect(()=>{
-        document.addEventListener("mousedown", (event) =>{
-            if(!menuRef.current.contains(event.target))
+        document.addEventListener("mouseover", (event) =>{
+            if(!menuRef.current.contains(event.target)){
                 setMenubar(false);
+                setMenubg(false)
+            }
 
-            else if(menubar){
-                setInterval(() =>{
-                    setMenubar(false)
-                },8000);
-        }
+            else{
+                setMenubar(true)
+                if(window.scrollY > 50){
+                    setMenubg(true)
+                }
+                else{
+                    setMenubg(false)
+                }
+            }
         })
    
     });
+
+    useEffect(()=>{
+        window.addEventListener("scroll",()=>{
+            console.log(window.scrollY)
+            if(window.scrollY > 50){
+                setHeaderbg(true)
+            }
+            else{
+                setHeaderbg(false)
+            }
+        })
+    })
 
     function returnHome(){
         if(window.localStorage.getItem("user") !== null){
@@ -55,45 +75,47 @@ export default function HeaderApp(){
         window.location.href="/";
     }
 
-    const clickAvatar = () =>{
-        setMenubar(true)
-    }
-
     const clickSearch = () =>{
         setSearch(!search)
     }
 
     return (
-        <div className='header-container'>
+        <div className={headerbg ? 'header-containerBG' : 'header-container'}>
             <img src='/image/header/netplix2.png' className='logo-header' onClick={returnHome}/>
         {states ? (
 
             <div className='headermenu'>
                 <div className='nav'>
                     <ul className='navmenu'>
-                        <li className='nav-item'><a> Series</a></li>
-                        <li className='nav-item'><a> Films</a></li>
-                        <li className='nav-item'><a> Kids</a></li>
+                        <li className='nav-item'><a href="/browse/Series"> Series</a></li>
+                        <li className='nav-item'><a href="/browse/Films"> Films</a></li>
+                        <li className='nav-item'><a href="/browse/Kids"> Kids</a></li>
                     </ul>
                 </div>
 
                 <div className='option'>
                     <input className={search ? "searchbar" : "searchbarhide"}></input>
                     <SearchOutlined className='searchicon' onClick={clickSearch}/>
-                    <img className='useravatar' src='image/main/avatar.png' onClick={clickAvatar} ref={menuRef}/>
+                    <div className='menuavatar' ref={menuRef}>
+                        <img className='useravatar' src='/image/main/avatar.png'/>
+                        <div className={menubg ? 'bg-boxask active' : 'bg-boxask'}></div>
                     
                         <div className={menubar ? "box-ask active" : "box-ask"}>
-                            <ul>
-                                <li onClick={getOut}>
-                                    <a><UserOutlined /> BackToAvatar</a>
-                                </li>
-                                <li onClick={SignOut}>
-                                    <a><ExportOutlined /> SignOut</a>
-                                </li>
-                            </ul>
+                            {menubar ? (
+                                <ul>
+                                    <li onClick={getOut}>
+                                        <a><UserOutlined /> BackToAvatar</a>
+                                    </li>
+                                    <li onClick={SignOut}>
+                                        <a><ExportOutlined /> SignOut</a>
+                                    </li>
+                                </ul>
+                            ) : null}
+                            
                         </div>
-                        
+                    </div>
                     <h3>{username}</h3>
+                    
                 </div>
             </div>
         

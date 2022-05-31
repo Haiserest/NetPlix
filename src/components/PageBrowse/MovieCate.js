@@ -34,8 +34,9 @@ export default function MovieCate(props){
     }
 
     const ListCateElements = movieList.map((movie)=>{
-        
+
         if (movie.type.search(movieType) > -1){
+            
             countPage++;
             return(
             <div className='catemovie'>
