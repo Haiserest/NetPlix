@@ -11,6 +11,16 @@ export default function PageSignIn(){
     const passregex = new RegExp("^(?=.*[a-z])(?=.*[0-9])(?=.{4,60})");
     const userregex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,4}');
 
+    const requestOptions = {
+        method: 'POST',
+        headers: { 
+            'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify({ 
+            email: username,
+            password: password })
+        };
+
     function onClickSubmit(){
 
         let status = true;
@@ -33,8 +43,12 @@ export default function PageSignIn(){
         }
 
         if(status){
-            localStorage.setItem("user", username);
-            localStorage.setItem("password", password);
+
+            fetch('http://localhost:5400/api/Netplix/login', requestOptions)
+            .then(res => res.json())
+            .then(data =>
+                 localStorage.setItem("user", JSON.stringify(data))
+                 )
             setUsername("");
             setPassword("");
             setErrUser("");

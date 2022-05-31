@@ -13,7 +13,8 @@ export default function HeaderApp(){
 
     useEffect(()=>{
         if(window.localStorage.getItem("watcher") !== null){
-            setUsername(window.localStorage.getItem("user").split("@")[0]); 
+            let user = JSON.parse(window.localStorage.getItem("user"));
+            setUsername(user.name);
             setStates(true)
         }
 
@@ -46,7 +47,6 @@ export default function HeaderApp(){
 
     useEffect(()=>{
         window.addEventListener("scroll",()=>{
-            console.log(window.scrollY)
             if(window.scrollY > 50){
                 setHeaderbg(true)
             }

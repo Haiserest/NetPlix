@@ -7,7 +7,8 @@ export default function PageAvatar(){
 
     useEffect(()=>{
         window.localStorage.removeItem("watcher");
-        setUsername(window.localStorage.getItem("user").split("@")[0]); 
+        let user = JSON.parse(window.localStorage.getItem("user"));
+        setUsername(user.name); 
     },[])
 
     const getIn = () =>{

@@ -19,6 +19,10 @@ export default function PageHome() {
     window.location.href="/signIn";
   }
 
+  function getStudents(){
+    fetch("http://localhost:5400/api/Netplix").then(res => res.json()).then(data => console.log(data))
+  }
+
   return (
     <div className="home-container">
       <div className='home-header'>
@@ -34,7 +38,7 @@ export default function PageHome() {
               membership.
             </h4>
             <input placeholder="Email address" className="home-input" />
-            <button className="home-btn">Get Started &#62;</button>
+            <button className="home-btn" onClick={getStudents}>Get Started &#62;</button>
           </div>
         </div>
 
